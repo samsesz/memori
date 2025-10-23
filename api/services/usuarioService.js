@@ -60,6 +60,15 @@ class usuarioService {
             console.log(error);
         }
     }
+
+    async getByEmail(emailUsuario) {
+        try {
+            const usuario = await Usuario.findOne({ emailUsuario: emailUsuario });
+            return usuario;
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 export default new usuarioService();
