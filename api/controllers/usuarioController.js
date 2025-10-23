@@ -128,5 +128,6 @@ const LoginUsuario = async (req, res) => {
       res.status(500).json({ error: "Erro interno do servidor" });
     }
   };
+  
 
 export default {getAllUsuarios, createUsuario, deleteUsuario, updateUsuario, getOneUsuario, LoginUsuario, jwtSecret};

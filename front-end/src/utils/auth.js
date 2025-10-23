@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { headers } from 'next/headers';
 
 export const axiosConfig = {
     headers: {
-        authorization: `Bearer ${typeof window === 'undefined' ? localStorage.getItem("token") : ""   
+        authorization: `Bearer ${typeof window !== 'undefined' ? localStorage.getItem("token") : ""   
         }`,
     },
 };

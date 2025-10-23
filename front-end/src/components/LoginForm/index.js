@@ -1,8 +1,42 @@
 import style from "@/components/LoginForm/LoginForm.module.css";
+import { useState, useEffect } from "react";
+import { login } from "@/utils/auth";
+import { useRouter } from "next/router";
 
-const LoginForm = () => {
+const LoginContent = () => {
+    const router = useRouter();
+    const [emailUsuario, setEmailUsuario] = useState("");
+    const [senhaUsuario, setSenhaUsuario] = useState("");
 
-    return(
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const result = await login(emailUsuario, senhaUsuario);
+        if (result.success) {
+            router.push("/");
+        } else {
+        alert("Falha ao fazer login. Tente novamente.")
+        }
+    };
+
+    useEffect(() => {
+        const form = document.querySelector(`.${style.formLogin}`);
+        const userInput = form.querySelector('input[type="username"]');
+        const passInput = form.querySelector('input[type="password"]');
+
+        // Atualiza estados
+        userInput.addEventListener("input", (e) => setEmailUsuario(e.target.value));
+        passInput.addEventListener("input", (e) => setSenhaUsuario(e.target.value));
+
+        // Intercepta submit
+        form.addEventListener("submit", onSubmit);
+
+        // cleanup
+        return () => {
+            form.removeEventListener("submit", onSubmit);
+        };
+    }, []);
+
+    return (
         <>
         
     <div className={style.loginContainer}>  
@@ -31,9 +65,8 @@ const LoginForm = () => {
 
     </div> 
         </>
-    )
-
-    
+    )  
 }
 
-export default LoginForm;
+export default LoginContent;
+
