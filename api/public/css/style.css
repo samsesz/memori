@@ -1,0 +1,586 @@
+@font-face {
+    font-family: 'coolvetica';
+    src: url('fonts/coolvetica/Coolvetica RG.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'Louis George Cafe';
+    src: url('fonts/louis_george_cafe/Louis George Cafe.ttf') format('truetype');
+  }
+
+*{
+    margin:0 ;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: #FFF;
+    transition: background-color 0.5s ease;
+}
+
+.banner{
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    padding-top: 60px;
+    position: fixed;
+    text-align: center;
+}
+
+.fixo{
+    width: 100%;
+    height: 100px;
+    top: 0;
+    position: absolute;
+    background-color: #FFD93D;
+    z-index: -1;
+    
+    
+}
+
+.sair {
+    color: #111;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: right;
+    font-family: Louis George Cafe;
+    font-style: normal;
+    padding-right: 30px;
+    padding-top:0;
+    text-decoration: none;
+}
+
+.slide{
+    height: 1200px;
+    width: 200px;
+    top: 0;
+    position: absolute;
+    background-color: #FF6B6B;
+    transition: 0.5s ease;
+    transform: translateX(-200px);
+   z-index: 5;
+}
+
+.logo{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    padding-top: 300px;
+    padding-left: 60px;
+    
+}
+
+
+h1{
+    color: #EEE;
+    font-weight: 800;
+    font-size: 35px;
+    text-align: right;
+    padding: 35px 0; 
+    padding-right: 30px;
+    pointer-events: nome;
+    font-family: coolvetica, sans-serif;
+    font-style: normal;
+}
+
+h2{
+    color: #111;
+    font-weight: 800;
+    font-size: 25px;
+    text-align: right;
+    font-family: coolvetica, sans-serif;
+    font-style: normal;
+    padding: 20px 0;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+}
+
+
+ul li {
+    list-style: none;
+   
+}
+
+ul li a{
+    color: #EEE;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+    font-family:  Louis George Cafe;
+    font-style: normal;
+   
+    
+}
+ul li:hover a {
+    color: #FFF;
+    background-color: #FFD93D;
+}
+ul li a i {
+    width: 40px;
+    text-align: center;
+}
+
+ul li ul.dropdown li {
+   display: block;
+}
+
+ul li ul.dropdown {
+    width: 200px;
+    color: #FFF;
+    background-color: #FFD93D;
+    position: absolute;
+    z-index:999;
+    display: none; 
+    left: 200px !important;
+    top: 205px;
+
+}
+
+
+ul li:hover ul.dropdown{
+    display: block;
+    background-color: #FFD93D;
+}
+
+ul li ul.dropdown-rotas li {
+    display: block;
+ }
+ 
+ ul li ul.dropdown-rotas {
+     width: 200px;
+     color: #FFF;
+     background-color: #FFD93D;
+     position: absolute;
+     z-index:999;
+     display: none; 
+     left: 200px !important;
+     top: 245px;
+ 
+ }
+ 
+ 
+ ul li:hover ul.dropdown-rotas{
+     display: block;
+     background-color: #FFD93D;
+ }
+
+.hidden-checkbox{
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+}
+
+.toggle{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 40px;
+    left: 15px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #EEE;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 6;
+}
+
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #FF6B6B;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.toggle .top_line{
+    top: 30%;
+    left: 20%;
+    transform: translate (-50%, -50%);
+}
+
+.toggle .middle_line{
+    top: 50%;
+    left: 20%;
+    transform: translate (-50%, -50%);
+}
+
+.toggle .bottom_line{
+    top: 70%;
+    left: 20%;
+    transform: translate (-50%, -50%);
+}
+
+.hidden-checkbox:checked ~ .toggle .top_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+.hidden-checkbox:checked ~ .toggle .bottom_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+.hidden-checkbox:checked ~ .toggle .middle_line {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.hidden-checkbox:checked ~ .slide {
+    transform: translateX(0);
+    box-shadow: 0 0 15px  rgba(0,0,0,0.3);
+}
+
+/* FORMULÁRIOS */
+
+label{
+    font-family: Louis George Cafe;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+h3{
+    color: #111;
+    font-weight: 200;
+    font-size: 25px;
+    text-align: left;
+    font-family: coolvetica, sans-serif;
+    font-style: normal;
+    padding: 20px 0;
+    padding-left: 30px;
+    padding-top: 30px;
+    margin-bottom: 0;
+}
+
+h4{
+    color: #111;
+    font-weight: 200;
+    font-size: 20px;
+    text-align: left;
+    font-family: coolvetica, sans-serif;
+    font-style: normal;
+    margin-bottom: 5;
+}
+
+
+.container-formulario{
+    position: relative;
+    top: 80px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 15px  rgba(0,0,0,0.3);
+    background-color: #fff;
+    border-radius: 10px;
+    line-height: 30px;
+}
+
+.cadastrar{
+    position: inherit;
+    top:5px;
+    padding: 25px;
+    width: 35%;
+    background-color: #fff;
+    border-color: #c7c7c7;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.form-input{
+    height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    text-align: left;
+    padding:10px;
+    font-family:Louis George Cafe;
+    font-weight: 400;
+    font-size: 15px;
+    width: 100%;
+    top: 5px;
+}
+
+
+.inserir-dados{
+    padding-top: 10px;
+    line-height: 30px;
+    
+}
+
+.texto-checkbox{
+    color:#111 !important;
+    font-weight: 500 !important;   
+}
+
+.button-cadastro{
+  background-color: #6BCB77; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+  font-family: Louis George Cafe;
+}
+
+.button-cadastro:hover{
+    background-color: #D8FFDC; /* Green */
+    transition: 0.2s ease-out;
+    border: none;
+    color: #6BCB77;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    font-family: Louis George Cafe;
+  }
+
+.div-botao{
+   text-align: right;
+}
+
+/* CONSULTAR USUÁRIOS*/
+
+table{
+    padding: 2px ;
+    border-color: #c7c7c7;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    line-height: 30px;
+    width: 100%;
+    height: 15px;
+    text-align: left;
+}
+table thead th{
+    font-family: Louis George Cafe;
+    padding: 5px;
+    font-weight: 600 !important;
+}
+
+table tr td{
+    font-family: Louis George Cafe;
+    padding: 5px;
+    font-weight: 400 !important;
+}
+
+.consultar{
+    position: inherit;
+    top:5px;
+    padding: 25px;
+    width: 63%;
+    background-color: #fff;
+    border-color: #c7c7c7;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    overflow: auto;
+    height: 700px;
+}
+
+.wrapper{
+    padding: 10px;
+    display: flex;
+    gap: 20px; /* espaço entre as divs */
+    flex-wrap: wrap; /* opcional, pra quebrar se for em telas pequenas */
+}
+
+select{
+    font-size: 15px;
+    border-radius: 5px;
+    font-family: Louis George Cafe;
+    width:100%;
+    height: 25px;
+}
+
+.abrir-mapa{
+  background-color: #6BCB77; 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+  font-family: Louis George Cafe;
+}
+
+.abrir-mapa:hover{
+    background-color: #D8FFDC; 
+    transition: 0.2s ease-out;
+    border: none;
+    color: #6BCB77;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    font-family: Louis George Cafe;
+  }
+
+  .btn-editar{
+    background-color: #4D96FF; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    font-family: Louis George Cafe;
+  }
+  
+  .btn-editar:hover{
+      background-color: #C8FCFF; 
+      transition: 0.2s ease-out;
+      border: none;
+      color: #4D96FF;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      border-radius: 12px;
+      font-family: Louis George Cafe;
+    }
+
+    .btn-excluir{
+        background-color: #FF6B6B; 
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        border-radius: 12px;
+        font-family:Louis George Cafe;
+      }
+      
+      .btn-excluir:hover{
+          background-color: #FFE7E7; 
+          transition: 0.2s ease-out;
+          border: none;
+          color: #FF6B6B;
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 15px;
+          border-radius: 12px;
+          font-family: Louis George Cafe;
+        }
+
+
+    .btn-arquivo{
+    border: none;
+    color: #111;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    font-family: Louis George Cafe;
+
+    }
+
+
+/* MODAL */
+
+.corpo-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.abrir-modelagem{
+    background-color: #6BCB77; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    font-family: Louis George Cafe;
+  }
+  
+  .abrir-modelagem:hover{
+      background-color: #D8FFDC; 
+      transition: 0.2s ease-out;
+      border: none;
+      color: #6BCB77;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      border-radius: 12px;
+      font-family: Louis George Cafe;
+    }
+
+
+/*TELA DE LOGIN*/
+
+.tela-login{
+    position: absolute;
+    font-family: Louis George Cafe;
+    background-color: #ffffff; 
+    height: 500px;
+    width: 500px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    border: solid #FF6B6B;
+    text-align: left;
+    padding-left: 100px;
+    line-height: 30px;
+    padding-right: 50px;
+    padding-top: 150px;
+    
+}
+
+.form-login{
+    position: absolute;
+    text-align: center;
+    font-family: Louis George Cafe;
+    background-color: #FF6B6B; 
+    height: 500px;
+    width: 700px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius:25px;
+    top:50%;
+    left: 35%;
+    right: 0px;
+    transform: translate(-50%, -50%);
+    float: left !important;
+}
