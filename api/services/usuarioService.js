@@ -22,6 +22,7 @@ class usuarioService {
             await newUsuario.save();
         } catch (error) {
             console.log(error);
+            throw error;
         }
     }
     
@@ -31,6 +32,7 @@ class usuarioService {
             console.log(`Usuario com id ${id} deletado com sucesso!`);
         } catch (error) {
             console.log(error);
+            throw error;
         }
     }
 
@@ -49,6 +51,7 @@ class usuarioService {
             return usuario;
         } catch (error) {
             console.log(error);
+            throw error;
         }
     }
 
@@ -58,6 +61,7 @@ class usuarioService {
             return usuario;
         } catch (error) {
             console.log(error);
+            throw error;
         }
     }
 
@@ -67,6 +71,7 @@ class usuarioService {
             return usuario;
         } catch (error) {
             console.log(error);
+            throw error;
         }
     }
 }

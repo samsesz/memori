@@ -215,7 +215,7 @@ const ConsultarModelagens = () => {
     {isModalOpen && (
                 <ModalViewer3D 
                     onClose={handleFecharModal} 
-                    urlModelo="/modelos/teste/scene.gltf"
+                    urlModelo="/modelagem/suburban_house/scene.gltf"
                 />
             )}
 

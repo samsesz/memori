@@ -12,7 +12,7 @@ const LoginContent = () => {
         e.preventDefault();
         const result = await login(emailUsuario, senhaUsuario);
         if(result.success) {
-            router.push("/usuarios");
+            router.push("/perfil");
         } else {
             alert("Falha ao fazer login. Tente novamente.");
         }
@@ -25,7 +25,7 @@ const LoginContent = () => {
                 <div className={style.inputWrapper}>
                     <input
                         type="text"
-                        placeholder="Nome de Usuário"
+                        placeholder="E-mail do Usuário"
                         className={style.inputField}
                         value={emailUsuario}
                         onChange={(e) => setEmailUsuario(e.target.value)}

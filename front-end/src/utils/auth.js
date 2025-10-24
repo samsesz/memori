@@ -15,7 +15,6 @@ export const login = async (emailUsuario, senhaUsuario) => {
         });
         const token = res.data.token;
         localStorage.setItem("token", token);
-        alert("Login realizado com sucesso!");
         axiosConfig.headers.authorization = `Bearer ${token}`;
         return { success: true };
     } catch (error) {
