@@ -12,7 +12,7 @@ const LoginContent = () => {
         e.preventDefault();
         const result = await login(emailUsuario, senhaUsuario);
         if(result.success) {
-            router.push("/usuarios");
+            router.push("/perfil");
         } else {
             alert("Falha ao fazer login. Tente novamente.");
         }
