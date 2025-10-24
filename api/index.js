@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 const app = express();
 
 // Importando para ser criado no banco 
@@ -15,6 +16,10 @@ import modelagemRoutes from "./routes/modelagemRoutes.js";
 import quizRoutes from "./routes/quizRoutes.js";
 import rotaRoutes from "./routes/rotaRoutes.js";
 import usuarioRoutes from "./routes/usuarioRoutes.js";
+
+app.use(cors({
+  origin: 'http://localhost:3000', // Substitua pela origem do seu front-end
+}))
 
 // Configurações do Express
 app.use(express.urlencoded({ extended: false }));
