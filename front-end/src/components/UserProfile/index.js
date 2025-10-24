@@ -2,7 +2,10 @@ import React from 'react';
 import Image from 'next/image'; // Para otimização de imagens no Next.js
 import style from "@/components/UserProfile/UserProfile.module.css";
 
+import { useRouter } from 'next/router';
+
 const UserCard = ({ user, onLogout }) => {
+  const router = useRouter();
   const defaultUser = {
     nome: "Larissa",
     usuario: "ltoyohashi",
@@ -18,6 +21,8 @@ const UserCard = ({ user, onLogout }) => {
       onLogout();
     }
     alert('Usuário deslogado!'); 
+
+    router.push('/login');
   };
 
   return (
@@ -42,8 +47,8 @@ const UserCard = ({ user, onLogout }) => {
         <span className={style.userRole}>{currentUser.atribuicao}</span>
 
         {/* Botão de Logoff */}
-        <button onClick={handleLogout} className={style.logoutButton}>
-          <a href='http://localhost:3000/login'>Sair</a>
+        <button type="button" onClick={handleLogout} className={style.logoutButton}>
+          Sair
         </button>
       </div>
     </div>
