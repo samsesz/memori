@@ -44,19 +44,21 @@ app.use("/api/usuario", usuarioRoutes);
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/api-memori";
 const PORT = process.env.PORT || 4000;
 
+// Conecta ao Mongo e só depois sobe o servidor
 mongoose
   .connect(MONGO_URI)
   .then(() => {
-    console.log(" Conectado ao MongoDB com sucesso!");
+    console.log("✅ Conectado ao MongoDB com sucesso!");
     app.listen(PORT, "0.0.0.0", () => {
-      console.log(` Servidor rodando em http://localhost:${PORT}`);
+      console.log(`🚀 Servidor rodando na porta ${PORT}`);
     });
   })
   .catch((error) => {
-    console.error(" Erro ao conectar ao MongoDB:", error);
+    console.error("❌ Erro ao conectar ao MongoDB:", error);
   });
 
-// Rota padrão para testar
+// Rota padrão para teste
 app.get("/", (req, res) => {
-  res.send("Servidor Memori rodando ");
+  res.send("Servidor Memori rodando ✅");
 });
+
