@@ -1,7 +1,20 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
+// Configurações do Express
+app.use(cors());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static('public'));
+app.use('/modelos', express.static(path.join(__dirname, 'public/modelos')));
+app.use('/qrcodes', express.static(path.join(__dirname, '../public/qrcodes')));
 
 // Importando para ser criado no banco 
 import Checkpoint from "./models/Checkpoints.js"
@@ -17,15 +30,6 @@ import quizRoutes from "./routes/quizRoutes.js";
 import rotaRoutes from "./routes/rotaRoutes.js";
 import usuarioRoutes from "./routes/usuarioRoutes.js";
 
-app.use(cors({
-  origin: 'http://localhost:3000', // Substitua pela origem do seu front-end
-}))
-
-// Configurações do Express
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-app.use(express.static('public'));
 
 // Adicione o prefixo /api/ em todas as rotas
 app.use('/api/checkpoint', checkpointRoutes);
